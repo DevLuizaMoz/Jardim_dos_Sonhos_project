@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+a{
+    font-family: inherit;
+    text-decoration: none;
+}
+.nav-container_main {
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    z-index: 1;
+}
+.logo-main{
+    background-image: url(assents/imgs-gerais/logo/logo_jardim_dos_sonhos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 20px;
+    width: 90px;
+    height: 90px;
+}
+.nav-main{
+    background-color: #97DD6B;
+    padding-inline: 16px; /*se comporta como padding-left e padding-right.*/
+}
+.nav{
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding: 5px;
+}
+.nav-list a{
+    font-family: inherit;
+    font-size: 18px;
+    color: white;
+    padding-block: 16px; /* se comporta como padding-top e padding-bottom.*/
+}
+.nav-list li:hover {
+    transform: scale(1.1); 
+    border-bottom: 1.5px solid white; 
+    transition: transform 0.3s ease, border-bottom-color 0.3s ease;
+}
+.menu-nav{
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid white;
+    cursor: pointer;
+}
+.menu-nav::before, .menu-nav::after{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+}
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slide{
+    width: 25%;
+    margin-top: 70px;
+    transition: 2s;
+    position: relative;
+}
+.slide img {
+    width: 800px;
+}
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background-color: white;
+}
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+#radio5:checked ~ .first{
+    margin-left: -100%;
+}
+.navigation-auto div{
+    border: 2px solid #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 465px;
+    display: flex;
+    justify-content: center;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #C737A1;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #6976E0;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #2CA9A1;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: #FFD55A;
+}
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background-color: #E67D53;
+}
+
+.additional-pages_main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+.content-imgs_main{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.img1{
+    background-image: url(assents/imgs-gerais/imgs-elementos/brinquedo_de_encaixe.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 120px;
+    margin-right: 90px;
+    margin-bottom: 30px;
+}
+.img2{
+    background-image: url(assents/imgs-gerais/imgs-elementos/chocalho.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 120px;
+    margin-right: 90px;
+    margin-bottom: 30px;
+}
+.img3{
+    background-image: url(assents/imgs-gerais/imgs-elementos/blocos_coloridos.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 105px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.paragraph-more-pages-main{
+    text-align: center;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 5px;
+    color: darkgreen;
+    cursor: pointer;
+}
+.paragraph-more-pages-main:hover{
+    border-bottom: 2px solid rgb(108, 166, 72);
+    transition: 0.2s ease;
+}
+.basic-information_main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.basic-information_main{
+    width: 750px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    
+}
+.texts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 15px; 
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 2px solid #2CA9A1;
+    border-radius: 20px;
+}
+.texts:nth-child(odd) {
+    flex-direction: row; 
+}
+
+.texts:nth-child(even) {
+    flex-direction: row-reverse; 
+}
+.arts{
+    border: 2px solid #2CA9A1;
+    border-radius: 20px;
+}
+.desenho1{
+    background-image: url(assents/imgs-gerais/imgs-desenhos/desenho_casa.jpg);
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 220px;
+    height: 140px;
+    border-radius: 20px;
+}
+.desenho2{
+    background-image: url(assents/imgs-gerais/imgs-desenhos/desenho_gato.webp);
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+}
+.desenho3{
+    background-image: url(assents/imgs-gerais/imgs-desenhos/desenho_familia.jpg);
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 210px;
+    border-radius: 20px;
+}
+.paragraph-principal-information,
+.paragraph-information {
+    flex: 1;
+    font-family: inherit;
+    color: #333;
+}
+
+
+@media (max-width:918px) {
+    .menu-nav{
+        display: block;
+        z-index: 1;
+    }
+    .nav-list{
+        position: fixed;
+        top: -10px;
+        left: 0;
+        padding-top: 20px;
+        width: 100vw;
+        height: 100vh;
+        background-color: #97DD6B;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+    .nav-list a{
+        font-size: 24px;
+        opacity: 0;
+    }
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.1s;
+    }
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.2s;
+    }
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.3s;
+    }
+    .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.4s;
+    }
+    .nav-list li:nth-child(5) a {
+        transition: 0.5s 0.5s;
+    }
+    .nav-list li:nth-child(6) a {
+        transition: 0.5s 0.6s;
+    }
+    .nav.active .nav-list{
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+    .nav.active .nav-list a{
+        opacity: 1;
+    }
+    .nav.active .menu-nav{
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+    .nav.active .menu-nav::before{
+        transform: rotate(135deg);
+    }
+    .nav.active .menu-nav::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
