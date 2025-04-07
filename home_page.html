@@ -168,15 +168,17 @@
                 </div>
             </section>
 
+
+            <!--arrumar depois
+            FAZER TODOS O CSS E JAVASCRIPT
+            -->
+
             <section class="slider-comment-parents_main" id="testimonials">
+                <div class="content-text-testimonials">
+                    <h1>Testemunho dos pais dos nossos alunos</h1>
+                </div>
                 <div class="content-slider">
                     <div class="content-slides_testimonials">
-                        <input type="radio" name="radio-btn_testimonials" id="radio-testimonials1" checked>
-                        <input type="radio" name="radio-btn_testimonials" id="radio-testimonials2">
-                        <input type="radio" name="radio-btn_testimonials" id="radio-testimonials3">
-                        <input type="radio" name="radio-btn_testimonials" id="radio-testimonials4"> 
-                        <input type="radio" name="radio-btn_testimonials" id="radio-testimonials5">
-            
                         <div class="slide-testimonials first">
                             <p class="paragraph_comment">Eu não poderia estar mais feliz com o cuidado e atenção que minha filha recebe. Desde o berçário, é perceptível o carinho dos educadores e a preocupação com o desenvolvimento dela. Um ambiente maravilhoso!</p>
                             <p class="paragraph_comment_names">Mariana Lopes</p>
@@ -197,28 +199,36 @@
                             <p class="paragraph_comment">Ver meu pequeno se desenvolver em um ambiente tão cuidadoso e estimulante é algo que como mãe me enche de gratidão. O carinho e a dedicação dos profissionais refletem diretamente na felicidade do meu filho.</p>
                             <p class="paragraph_comment_names">Fernanda Carvalho</p>
                         </div>
-            
-                        <div class="navigation-auto_testimonials">
-                            <div class="auto-btn_testimonials1"></div>
-                            <div class="auto-btn_testimonials2"></div>
-                            <div class="auto-btn_testimonials3"></div>
-                            <div class="auto-btn_testimonials4"></div>
-                            <div class="auto-btn_testimonials5"></div>
-                        </div>
                     </div>
-            
-                    <div class="manual-navigation_testimonials">
-                        <label for="radio-testimonials1" class="manual-btn_testimonials"></label>
-                        <label for="radio-testimonials2" class="manual-btn_testimonials"></label>
-                        <label for="radio-testimonials3" class="manual-btn_testimonials"></label>
-                        <label for="radio-testimonials4" class="manual-btn_testimonials"></label>
-                        <label for="radio-testimonials5" class="manual-btn_testimonials"></label>
-                    </div>
+                    <button class="nav-button left" onclick="prevComment()">&#10094;</button>
+                    <button class="nav-button right" onclick="nextComment()">&#10095;</button>
                 </div>
             </section>
-
+  
             <section class="contact-area_main" id="contact">
+                <div class="content-text">
+                    <h2>Visite-nos ou nos mande mensagem</h2>
+                </div>
+                <div class="content-map-contact">
+                    <div class="content-mapBox">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467688.8949511927!2d-46.59529920000001!3d-23.68241239999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-PT!2sbr!4v1744059082539!5m2!1spt-PT!2sbr" width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="content-contact">
+                    <form action="" method="post">
+                        <label>Nome</label>
+                        <input type="text" name="name" placeholder="Digite seu nome" autocomplete="on">
+                        <label>E-mail</label>
+                        <input type="email" name="email" placeholder="Digite seu E-mail" autocomplete="on">
+                        <label>Mensagem</label>
+                        <textarea name="message" cols="50" rows="5" placeholder="Digite sua mensagem"></textarea>
+                        <button type="submit">Enviar</button>
 
+                        <!--caso queira fazer funcionar, usar a api static forms-->
+                    </form>
+                    </div>
+                    
+                </div>
+                
             </section>
 
             <footer>
