@@ -19,3 +19,32 @@ function nextImage(){
     }
     document.getElementById("radio"+count).checked = true
 }
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.slide-testimonials');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Inicializa o primeiro slide
+    showSlide(currentSlide);
+    
+    // Muda de slide a cada 5 segundos
+    setInterval(nextSlide, 5000);
+});
