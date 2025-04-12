@@ -178,8 +178,9 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 75px;
-    margin-bottom: 75px;
+    width: 700px;
+    height: 500px;
+    margin: 25px auto;
 }
 .content-imgs_main{
     display: flex;
@@ -190,27 +191,28 @@ a{
     background-image: url(assents/imgs-gerais/imgs-elementos/brinquedo_de_encaixe.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px auto;
     width: 100px;
     height: 120px;
-    margin-right: 90px;
-    margin-bottom: 30px;
 }
 .img2{
     background-image: url(assents/imgs-gerais/imgs-elementos/chocalho.png);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100px;
+    background-position: center;
+    margin: 10px auto;
+    width: 73px;
     height: 120px;
-    margin-right: 90px;
-    margin-bottom: 30px;
 }
 .img3{
     background-image: url(assents/imgs-gerais/imgs-elementos/blocos_coloridos.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px auto;
     width: 105px;
     height: 120px;
-    margin-bottom: 30px;
 }
 .content {
     flex: 1;
@@ -218,7 +220,30 @@ a{
     flex-direction: column; 
     gap: 10px; 
 }
-
+.instituicao{
+    width: 200px;
+    margin: 30px;
+}
+.bercario{
+    width: 200px;
+    margin: 30px;
+}
+.ed-infantil{
+    width: 200px;
+    margin: 30px;
+}
+.title-additional-pages{
+    text-align: center;
+    font-size: 18.5px;
+    font-weight: bold;
+    color: darkgreen;
+}
+.paragraph-additional-pages{
+    text-align: center;
+    font-size: 15.5px;
+    margin: 10px;
+    color: #2a2929;
+}
 .paragraph-more-pages-main{
     text-align: center;
     font-family: inherit;

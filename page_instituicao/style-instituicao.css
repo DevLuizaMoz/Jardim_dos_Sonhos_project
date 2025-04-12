@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+a{
+    font-family: inherit;
+    text-decoration: none;
+}
+.nav-container_main {
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    z-index: 1;
+}
+.logo-main{
+    background-image: url(assents/imgs-gerais/logo/logo_jardim_dos_sonhos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 20px;
+    width: 90px;
+    height: 90px;
+}
+.nav-main{
+    background-color: #97DD6B;
+    padding-inline: 16px; /*se comporta como padding-left e padding-right.*/
+}
+.nav{
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding: 5px;
+}
+.nav-list a{
+    font-family: inherit;
+    font-size: 18px;
+    color: white;
+    padding-block: 16px;
+}
+.nav-list li:hover {
+    transform: scale(1.1); 
+    border-bottom: 1.5px solid white; 
+    transition: transform 0.3s ease, border-bottom-color 0.3s ease;
+}
+.menu-nav{
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid white;
+    cursor: pointer;
+}
+.menu-nav::before, .menu-nav::after{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+.photo-main{
+    background-image: url(imgs/conjunto_brinquedos.jpg);
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+.paragraph-photo{
+    position: absolute;
+    top: 75.8%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 5rem;
+    color: white;
+    font-weight: bold;
+}
+.ideias-educational{
+    width: 60vw;
+    height: 100vh;
+    margin: 55px auto;
+}
+.title-ideias-educational{
+    font-size: 2.5rem;
+    padding: 35px 10px;
+    white-space: normal;
+}
+.history{
+    text-align: justify;
+    line-height: 1.7rem;
+    margin-bottom: 55px;
+}
+.history p{
+    font-size: 15.5px;
+    padding: 10px;
+}
+.ideario{
+    text-align: justify;
+    line-height: 1.7rem;
+    margin-bottom: 55px;
+    height: 100vh;
+}
+.ideario p{
+    font-size: 15.5px;
+    padding: 10px;
+}
+.pegagogic-work{
+    text-align: justify;
+    line-height: 1.7rem;
+    margin-bottom: 55px;
+    height: 100vh;
+}
+.pegagogic-work p{
+    font-size: 15.5px;
+    padding: 10px;
+}
+.photo-pegagogic-work{
+    background-image: url(imgs/criancas_estudando.jpg);
+    width: 400px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+.infrastructure{
+    text-align: justify;
+    line-height: 1.7rem;
+    margin-bottom: 55px;
+    height: 100vh;
+}
+.infrastructure p{
+    font-size: 15.5px;
+    padding: 10px;
+}
+.content-imgs-infraestructures{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    margin: auto;
+    padding: 35px;
+}
+.photo-infraestructure1{
+    background-image: url(imgs/brinquedoteca\ \(2\).jpg);
+    width: 180px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.photo-infraestructure2{
+    background-image: url(imgs/brinquedoteca\ \(3\).jpg);
+    width: 180px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.photo-infraestructure3{
+    background-image: url(imgs/brinquedoteca\ \(4\).jpg);
+    width: 180px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.photo-infraestructure4{
+    background-image: url(imgs/brinquedoteca\ \(5\).jpg);
+    width: 180px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@media (max-width:918px) {
+    .menu-nav{
+        display: block;
+        z-index: 1;
+    }
+    .nav-list{
+        position: fixed;
+        top: -10px;
+        left: 0;
+        padding-top: 20px;
+        width: 100vw;
+        height: 100vh;
+        background-color: #97DD6B;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+    .nav-list a{
+        font-size: 24px;
+        opacity: 0;
+    }
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.1s;
+    }
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.2s;
+    }
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.3s;
+    }
+    .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.4s;
+    }
+    .nav-list li:nth-child(5) a {
+        transition: 0.5s 0.5s;
+    }
+    .nav-list li:nth-child(6) a {
+        transition: 0.5s 0.6s;
+    }
+    .nav.active .nav-list{
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+    .nav.active .nav-list a{
+        opacity: 1;
+    }
+    .nav.active .menu-nav{
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+    .nav.active .menu-nav::before{
+        transform: rotate(135deg);
+    }
+    .nav.active .menu-nav::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
