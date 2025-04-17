@@ -17,67 +17,96 @@ a{
     font-family: inherit;
     text-decoration: none;
 }
-.nav-container_main {
-    position: fixed;
-    top: 0;
+nav {
     width: 100%; 
-    z-index: 1;
+    background-color: #97DD6B;
+    box-shadow: 0px 0px 5px black; 
+    position: fixed; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    top: 0; 
+    z-index: 1000; 
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
 }
 .logo-main{
-    background-image: url(assents/imgs-gerais/logo/logo_jardim_dos_sonhos.png);
+    background-image: url(imgs/logo/logo_jardim_dos_sonhos.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     margin-left: 20px;
-    width: 90px;
-    height: 90px;
-}
-.nav-main{
-    background-color: #97DD6B;
-    padding-inline: 16px; /*se comporta como padding-left e padding-right.*/
-}
-.nav{
-    max-width: 1280px;
+    width: 110px;
     height: 70px;
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
-.nav-list{
-    display: flex;
-    gap: 32px;
+nav li { 
+    height: 50px;
+} 
+nav a { 
+    height: 100%; 
+    padding: 0 30px; 
+    text-decoration: none;
+    display: flex; 
+    align-items: center; 
+    color: black;
+} 
+nav li:first-child { 
+    margin-right: auto; 
+} 
+.nav_menu-button-icon { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+.sidebar { 
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    height: 100vh; 
+    width: 250px; 
+    z-index: 999; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(15px); 
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1); 
+    display: none; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
     list-style: none;
-    padding: 5px;
-}
-.nav-list a{
-    font-family: inherit;
-    font-size: 18px;
-    color: white;
-    padding-block: 16px;
-}
-.nav-list li:hover {
-    transform: scale(1.1); 
-    border-bottom: 1.5px solid white; 
-    transition: transform 0.3s ease, border-bottom-color 0.3s ease;
-}
-.menu-nav{
-    display: none;
-    border: none;
-    background: none;
-    border-top: 3px solid white;
-    cursor: pointer;
-}
-.menu-nav::before, .menu-nav::after{
-    content: " ";
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin-top: 5px;
+} 
+.sidebar li { 
+    width: 100%;
+} 
+.sidebar a { 
+    width: 100%;
+    color: black;
     position: relative;
-    transition: 0.3s;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
 }
+.sidebar a:not(.nav_closed-button-icon a)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: left 0.3s ease-in-out;
+}
+.sidebar a:not(.nav_closed-button-icon a):hover::before{
+    left: 0;
+}
+.nav_closed-button-icon { 
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: flex-end; 
+} 
 .photo-main{
     background-image: url(imgs/conjunto_brinquedos.jpg);
     width: 100%;
@@ -90,78 +119,124 @@ a{
     overflow: hidden;
 }
 .paragraph-photo{
-    position: absolute;
-    top: 75.8%;
-    left: 30px;
-    transform: translateY(-50%);
-    font-size: 5rem;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-size: 4rem;
     font-weight: bold;
+    color: #386d17;
 }
-.ideias-educational{
-    width: 60vw;
-    height: 100vh;
-    margin: 55px auto;
+.line {
+    display: flex; /* Mantenha a linha como flexível */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 2px;
+    background-color: #52a021;
+    width: 0; /* Inicialmente com largura 0 */
+    transition: width 1s ease; /* Transição suave para a largura */
+}
+.line.visible {
+    width: 400px; /* Largura final quando visível */
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    max-width: 70vw;
+    height: 100%;
+}
+.content-ideias-educational{
+    text-align: justify;
+    flex-direction: column;
 }
 .title-ideias-educational{
     font-size: 2.5rem;
-    padding: 35px 10px;
+    padding: 35px;
     white-space: normal;
+    margin: auto;
+    text-align: left;
+    color: #386d17;
 }
 .history{
     text-align: justify;
     line-height: 1.7rem;
+    margin-top: 75px;
     margin-bottom: 55px;
+    width: 100vw; 
+    padding: 20px;
 }
 .history p{
+    width: 75vw;
     font-size: 15.5px;
     padding: 10px;
+    margin: 0 auto;
 }
-.ideario{
+.ideario {
     text-align: justify;
     line-height: 1.7rem;
-    margin-bottom: 55px;
-    height: 100vh;
+    background-color: #85ec45ab;
+    width: 100vw; 
+    padding: 20px;
+}
+.ideario-content {
+    width: 100%;
+    margin: 0 auto;
 }
 .ideario p{
+    width: 75vw;
     font-size: 15.5px;
     padding: 10px;
+    margin: 0 auto;
 }
 .pegagogic-work{
     text-align: justify;
     line-height: 1.7rem;
     margin-bottom: 55px;
-    height: 100vh;
+    width: 100vw; 
+    padding: 20px;
 }
 .pegagogic-work p{
+    width: 75vw;
     font-size: 15.5px;
     padding: 10px;
+    margin: 0 auto;
 }
 .photo-pegagogic-work{
     background-image: url(imgs/criancas_estudando.jpg);
-    width: 400px;
-    height: 200px;
+    width: 90vw;
+    height: 300px;
     background-size: cover;
     background-position: center;
-    margin: auto;
+    margin: 25px auto;
 }
 .infrastructure{
     text-align: justify;
     line-height: 1.7rem;
-    margin-bottom: 55px;
-    height: 100vh;
+    background-color: #85ec45ab;
+    width: 100vw; 
+    padding: 20px;
 }
 .infrastructure p{
+    width: 75vw;
     font-size: 15.5px;
     padding: 10px;
+    margin: 0 auto;
+}
+.infrastructure-content {
+    width: 100%;
+    margin: 0 auto;
 }
 .content-imgs-infraestructures{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    width: 60vw;
-    margin: auto;
-    padding: 35px;
+    width: 90vw;
+    padding-top: 10px;
 }
 .photo-infraestructure1{
     background-image: url(imgs/brinquedoteca\ \(2\).jpg);
@@ -191,67 +266,205 @@ a{
     background-size: contain;
     background-repeat: no-repeat;
 }
+.title-FAQ-box{
+    font-size: 2.5rem;
+    padding: 35px;
+    white-space: normal;
+    margin: auto;
+    text-align: center;
+    color: #386d17;
+}
+.questions-container{
+    max-width: 800px;
+    margin: 10px auto;
+}
+.question{
+    border-bottom: 1px solid #fff;
+}
+.question button{
+    width: 100%;
+    background-color: #85ec45ab;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border:none;
+    outline: none;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+.question p{
+    font-size: 16px;
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    margin: 10px;
+    transition: all 0.6s ease;
+}
+.d-arrow{
+    transition: transform 0.5s ease-in ;
+    color: #fff;
+}
+.question p.show{
+    max-height: 200px; 
+    opacity: 1;
+    padding:0px 15px 30px 15px;
+}
+.question button .d-arrow.rotate{
+    transform: rotate(180deg);
+}
+.content-footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    background-color: #85ec45ab;
+    height: 430px;
+}
+.content-information_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 25px;
+    width: 600px;
+}
+.logo-footer{
+    background-image: url(imgs/logo/logo_jardim_dos_sonhos.png);
+    width: 150px;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -25px;
+    margin-right: 10px;
+}
+.information-schedules-location_footer{
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.links-social-media_footer{
+    padding: 10px;
+}
+.text-social-media_footer{
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+.content-social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.motto_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 450px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 19.5px;
+    padding: 10px 10px 50px 10px;
+    position: relative;
+    top: -20px;
+}
+.programmer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    color: white;
+    background-color: #52a021;
+    position: absolute;
+    bottom: 0;
+}
 @media (max-width:918px) {
-    .menu-nav{
-        display: block;
-        z-index: 1;
+    .title-ideias-educational{
+        font-size: 1.8rem;
     }
-    .nav-list{
-        position: fixed;
-        top: -10px;
-        left: 0;
-        padding-top: 20px;
-        width: 100vw;
-        height: 100vh;
-        background-color: #97DD6B;
-        clip-path: circle(100px at 90% -15%);
-        transition: 1s ease-out;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        gap: 0;
-        pointer-events: none;
+    .history{
+        margin-top: 35px;
     }
-    .nav-list a{
-        font-size: 24px;
-        opacity: 0;
+    .history p{
+        font-size: 15px;
     }
-    .nav-list li:nth-child(1) a {
-        transition: 0.5s 0.1s;
+    .ideario p{
+        font-size: 15px;
     }
-    .nav-list li:nth-child(2) a {
-        transition: 0.5s 0.2s;
+    .pegagogic-work p{
+        font-size: 15px;
     }
-    .nav-list li:nth-child(3) a {
-        transition: 0.5s 0.3s;
+    .infrastructure p{
+        font-size: 15px;
     }
-    .nav-list li:nth-child(4) a {
-        transition: 0.5s 0.4s;
+    .title-FAQ-box{
+        font-size: 1.8rem;
     }
-    .nav-list li:nth-child(5) a {
-        transition: 0.5s 0.5s;
+    .question button{
+        font-size: 18px;
     }
-    .nav-list li:nth-child(6) a {
-        transition: 0.5s 0.6s;
+    .question p{
+        font-size: 15px;
     }
-    .nav.active .nav-list{
-        clip-path: circle(1500px at 90% -15%);
-        pointer-events: all;
+    .paragraph-photo{
+        margin-top: 35px;
+        font-size: 2.8rem;
     }
-    .nav.active .nav-list a{
-        opacity: 1;
+    .line.visible {
+        width: 230px; 
     }
-    .nav.active .menu-nav{
-        position: fixed;
-        top: 26px;
-        right: 16px;
-        border-top-color: transparent;
+    .logo-footer{
+        width: 130px;
+        height: 88px;
+        position: relative;
+        top: -22px;
     }
-    .nav.active .menu-nav::before{
-        transform: rotate(135deg);
+    .information-schedules-location_footer{
+        font-size: 16.5px;
     }
-    .nav.active .menu-nav::after{
-        transform: rotate(-135deg);
-        top: -7px;
+    .text-social-media_footer{
+        font-size: 17.5px;
+    }
+    .content-social-media{
+        gap: 20px;
+    }
+    .motto_footer{
+        margin: 20px;
+        font-size: 17.5px;
+        position: relative;
+        top: -30px;
+    }
+    .programmer{
+        font-size: 13.5px;
+    }
+}
+@media (max-width: 501px) {
+    .sidebar { 
+        width: 100%; 
+    } 
+    .photo-main{
+        display: none;
+    }
+    .paragraph-photo{
+        margin-top: 135px;
+        font-size: 2.2rem;
     }
 }

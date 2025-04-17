@@ -35,6 +35,7 @@ a{
 .nav-main{
     background-color: #97DD6B;
     padding-inline: 16px; /*se comporta como padding-left e padding-right.*/
+    box-shadow: 0px 0px 5px black;
 }
 .nav{
     max-width: 1280px;
@@ -176,11 +177,11 @@ a{
 
 .additional-pages_main{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 700px;
-    height: 500px;
-    margin: 25px auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: auto;
+    max-width: 800px;
 }
 .content-imgs_main{
     display: flex;
@@ -258,33 +259,24 @@ a{
     border-bottom: 2px solid rgb(108, 166, 72);
     transition: 0.2s ease;
 }
-.basic-information_main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 .basic-information_main{
-    width: 750px;
+    max-width: 700px;
     height: auto;
     display: flex;
     justify-content: center;   
     align-items: center;
-    margin: auto;
+    flex-direction: column;
+    margin: 0 auto;
     padding-top: 15px;
-    padding-left: 45px;
-    padding-right: 45px;
-    
 }
 .content-texts-arts {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
-    gap: 15px; 
-    padding-top: 35px;
-    padding-bottom: 35px;
-    padding-left: 25px;
-    padding-right: 25px;
+    justify-content: center;  
+    padding: 35px 25px;
     border-radius: 20px;
+    margin: 25px auto;
     background-color: #97dd6b68;
 }
 .content-texts-arts:nth-child(odd) {
@@ -296,6 +288,10 @@ a{
 }
 .content-arts{
     border-radius: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .desenho1{
     background-image: url(assents/imgs-gerais/imgs-desenhos/desenho_casa.jpg);
@@ -305,6 +301,7 @@ a{
     width: 220px;
     height: 150px;
     border-radius: 20px;
+    margin-right: 20px;
     transition: transform 0.3s ease;
 }
 .desenho1:hover {
@@ -318,6 +315,7 @@ a{
     width: 250px;
     height: 150px;
     border-radius: 20px;
+    margin-left: 20px;
     transition: transform 0.3s ease;
 }
 .desenho2:hover {
@@ -331,13 +329,11 @@ a{
     width: 270px;
     height: 210px;
     border-radius: 20px;
+    margin-right: 20px;
     transition: transform 0.3s ease;
 }
 .desenho3:hover {
     transform: scale(1.1); 
-}
-.content-texts{
-    padding-left: 7px;
 }
 .paragraph-principal-information,
 .paragraph-information {
@@ -349,14 +345,12 @@ a{
     font-size: 2rem;
     padding-top: 5px;
     padding-bottom: 5px;
-    line-height: 1.2;
 }
 .paragraph-information{
     font-size: 1rem;
-    line-height: 1.5;
 }
 .content-calendar{
-    width: 750px;
+    max-width: 800px;
     padding: 25px;
     margin: 55px auto;
     display: flex;
@@ -704,5 +698,131 @@ a{
     .nav.active .menu-nav::after{
         transform: rotate(-135deg);
         top: -7px;
+    }
+    .additional-pages_main{
+        margin: auto;
+        max-width: 700px;
+    }
+    .img1{
+        width: 70px;
+        height: 90px;
+    }
+    .img2{
+        width: 56px;
+        height: 90px;
+    }
+    .img3{
+        width: 85px;
+        height: 90px;
+    }
+    .title-additional-pages{
+        font-size: 17px;
+    }
+    .paragraph-additional-pages{
+        font-size: 14.2px;
+    }
+    .paragraph-more-pages-main{
+        font-size: 16px;
+        padding-left: 15px;
+    }
+    .instituicao{
+        width: 180px;
+        margin: 25px;
+    }
+    .bercario{
+        width: 180px;
+        margin: 25px;
+    }
+    .ed-infantil{
+        width: 180px;
+        margin: 25px;
+    }
+    .basic-information_main{
+        margin: auto;
+        padding-top: 15px;
+    }
+    .paragraph-principal-information{
+        font-size: 1.5rem;
+        padding-top: 3px;
+        padding-bottom: 7px;
+    }
+    .paragraph-information{
+        font-size: 0.9rem;
+    }
+    .title-dates{
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .content-dates article:hover{
+        pointer-events: none;
+    }
+    .logo-footer{
+        width: 130px;
+        height: 88px;
+        position: relative;
+        top: -22px;
+    }
+    .information-schedules-location_footer{
+        font-size: 16.5px;
+    }
+    .text-social-media_footer{
+        font-size: 17.5px;
+    }
+    .content-social-media{
+        gap: 20px;
+    }
+    .motto_footer{
+        margin: 20px;
+        font-size: 17.5px;
+        position: relative;
+        top: -30px;
+    }
+    .programmer{
+        font-size: 13.5px;
+    }
+}
+@media (max-width: 693px) {
+    .additional-pages_main {
+        flex-direction: column;
+        align-items: center; 
+        max-width: 100%;
+    }
+    .content-imgs_main {
+        flex-direction: column;
+        align-items: center; 
+    }
+    .basic-information_main {
+        width: 400px;
+        display: flex;
+        flex-direction: center; 
+        justify-content: center;   
+        align-items: center;
+        margin: auto;
+        position: relative;
+        left: 15px;
+    }
+    .content-texts-arts{
+        position: relative;
+        left: -15px;
+        margin-top: 35px;
+    }
+    .desenho1, .desenho2, .desenho3 {
+        display: none;
+    }
+    .content-texts {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .paragraph-principal-information {
+        font-size: 1.8rem;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+    .paragraph-information {
+        font-size: 1rem;
+        text-align: justify;
+        position: relative;
+        left: 0px;
     }
 }
