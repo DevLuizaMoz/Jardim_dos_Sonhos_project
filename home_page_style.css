@@ -13,6 +13,17 @@ body{
     height: 100vh;
     overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 7px;
+  background: none;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #52a021;
+  border-radius: 10px;
+}
 a{
     font-family: inherit;
     text-decoration: none;
@@ -208,16 +219,16 @@ nav a {
     background-color: #E67D53;
 }
 
-.additional-pages_main{
+.container-additional-pages{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin: auto;
+    flex-direction: center;
+    align-items: center;
+    margin: 50px auto;
     max-width: 800px;
 }
 .content-imgs_main{
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
@@ -246,7 +257,7 @@ nav a {
     background-position: center;
     margin: 10px auto;
     width: 105px;
-    height: 120px;
+    height: 125px;
 }
 .content {
     flex: 1;
@@ -268,54 +279,52 @@ nav a {
 }
 .title-additional-pages{
     text-align: center;
-    font-size: 18.5px;
+    font-size: 17.5px;
     font-weight: bold;
     color: darkgreen;
 }
 .paragraph-additional-pages{
     text-align: center;
-    font-size: 15.5px;
+    font-size: 14.5px;
     margin: 10px;
     color: #2a2929;
 }
 .paragraph-more-pages-main{
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-family: inherit;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
     padding-bottom: 5px;
     color: darkgreen;
     cursor: pointer;
+    transition: 0.2s ease-in;
 }
 .paragraph-more-pages-main:hover{
-    border-bottom: 2px solid rgb(108, 166, 72);
-    transition: 0.2s ease;
+    border-bottom: 1px solid rgb(108, 166, 72);
 }
 .basic-information_main{
-    max-width: 700px;
+    max-width: 800px;
     height: auto;
     display: flex;
     justify-content: center;   
     align-items: center;
     flex-direction: column;
-    margin: 0 auto;
-    padding-top: 15px;
+    margin: 30px auto;
 }
 .content-texts-arts {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;  
-    padding: 35px 25px;
-    border-radius: 20px;
-    margin: 25px auto;
-    background-color: #97dd6b68;
+    margin: 30px auto;
+    padding: 20px;
 }
 .content-texts-arts:nth-child(odd) {
     flex-direction: row; 
 }
-
 .content-texts-arts:nth-child(even) {
     flex-direction: row-reverse; 
 }
@@ -334,7 +343,7 @@ nav a {
     width: 220px;
     height: 150px;
     border-radius: 20px;
-    margin-right: 20px;
+    margin-left: 20px;
     transition: transform 0.3s ease;
 }
 .desenho1:hover {
@@ -348,7 +357,7 @@ nav a {
     width: 250px;
     height: 150px;
     border-radius: 20px;
-    margin-left: 20px;
+    margin-right: 20px;
     transition: transform 0.3s ease;
 }
 .desenho2:hover {
@@ -362,7 +371,7 @@ nav a {
     width: 270px;
     height: 210px;
     border-radius: 20px;
-    margin-right: 20px;
+    margin-left: 20px;
     transition: transform 0.3s ease;
 }
 .desenho3:hover {
@@ -375,14 +384,15 @@ nav a {
     color: #333;
 }
 .paragraph-principal-information{
-    font-size: 2rem;
+    font-size: 1.7rem;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 .paragraph-information{
     font-size: 1rem;
 }
-.content-calendar{
+
+.content-calendar {
     max-width: 800px;
     padding: 25px;
     margin: 55px auto;
@@ -391,35 +401,76 @@ nav a {
     align-items: center;
     flex-direction: column;
 }
-.content-dates article {
-    padding: 3px;
-    transition: transform 0.3s ease; 
+.content-dates {
+    width: 450px;
+    margin-top: 10px;
 }
-.content-dates article:hover {
-    transform: scale(1.1);
-    border-radius: 20px;
+.calendar-item {
+    margin-bottom: 10px;
+    position: relative;
 }
-.title-dates{
+.date-calendar {
+    border-radius: 20px 20px 0 0;
+    margin: 0 10px;
+    padding: 8px 15px;
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.paragraph-calendar {
+    border-radius: 0 0 20px 20px;
+    margin: 0 10px;
+    padding: 0 15px;
+    color: #2a2929;
+    font-size: 14px;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    overflow: hidden;
+    transition: 
+        max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out,
+        padding 0.4s ease;
+}
+
+.calendar-item.active .paragraph-calendar {
+    max-height: 300px; /* Valor generoso para conteúdo variável */
+    opacity: 1;
+    transform: translateY(0);
+    padding: 15px;
+}
+
+/* Cores para as datas */
+.calendar-item:nth-child(1) .date-calendar { background-color: #ff6f7d; }
+.calendar-item:nth-child(2) .date-calendar { background-color: #ffbc70; }
+.calendar-item:nth-child(3) .date-calendar { background-color: #ffff6b; }
+.calendar-item:nth-child(4) .date-calendar { background-color: #6dff8c; }
+.calendar-item:nth-child(5) .date-calendar { background-color: #67b9f8; }
+.calendar-item:nth-child(6) .date-calendar { background-color: #ba66ff; }
+
+/* Cores para os parágrafos */
+.calendar-item:nth-child(1) .paragraph-calendar { background-color: #ffb3ba; }
+.calendar-item:nth-child(2) .paragraph-calendar { background-color: #ffdfba; }
+.calendar-item:nth-child(3) .paragraph-calendar { background-color: #ffffba; }
+.calendar-item:nth-child(4) .paragraph-calendar { background-color: #baffc9; }
+.calendar-item:nth-child(5) .paragraph-calendar { background-color: #bae1ff; }
+.calendar-item:nth-child(6) .paragraph-calendar { background-color: #e0bbff; }
+
+.calendar-item:hover .date-calendar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.title-dates {
     font-size: 2rem;
     color: #333;
     font-family: inherit;
     margin-top: 35px;
+    text-align: center;
 }
-.date-calendar{
-    background-color: #5cbf1ebe;
-    border-radius: 20px 20px 0px 0px;
-    margin: 10px 10px 0px 10px;
-    padding: 5px 5px 5px 15px;
-    font-weight: bold;
-    color: #333;
-}
-.paragraph-calendar{
-    background-color: #97dd6ba0;
-    border-radius: 0px 0px 20px 20px;
-    margin: 0px 10px 10px 10px;
-    padding: 5px 5px 5px 15px;
-    color: #2a2929;
-}
+
+/*seção de comentarios fazer amanhã*/
 .slider-comment-parents_main{
     height: 100vh;
 }
@@ -733,8 +784,8 @@ nav a {
         transform: rotate(-135deg);
         top: -7px;
     }
-    .additional-pages_main{
-        margin: auto;
+    .container-additional-pages{
+        margin: 30px auto;
         max-width: 700px;
     }
     .img1{
@@ -750,14 +801,13 @@ nav a {
         height: 90px;
     }
     .title-additional-pages{
-        font-size: 17px;
+        font-size: 16px;
     }
     .paragraph-additional-pages{
-        font-size: 14.2px;
+        font-size: 13.5px;
     }
     .paragraph-more-pages-main{
         font-size: 16px;
-        padding-left: 15px;
     }
     .instituicao{
         width: 180px;
@@ -786,15 +836,25 @@ nav a {
     .paragraph-information{
         font-size: 0.9rem;
     }
+    .desenho1{
+        width: 230px;
+        height: 160px;
+    }
+    .desenho2{
+        width: 250px;
+        height: 150px;
+    }
+    .desenho3{
+        width: 250px;
+        height: 180px;
+    }
+    .content-dates {
+        width: 400px;
+        padding: 20px;
+    }
     .title-dates{
         text-align: center;
         font-size: 1.4rem;
-    }
-    .content-dates article {
-        pointer-events: none;
-    }
-    .content-dates article:hover {
-        pointer-events: none;
     }
     .logo-footer{
         width: 130px;
@@ -905,9 +965,11 @@ nav a {
     .sidebar { 
         width: 100%; 
     } 
-    .additional-pages_main {
+    .container-additional-pages {
         flex-direction: column;
+        justify-content: center;
         align-items: center; 
+        margin: 30px auto;
         max-width: 100%;
     }
     .content-imgs_main {
@@ -921,16 +983,18 @@ nav a {
         justify-content: center;   
         align-items: center;
         margin: auto;
-        position: relative;
-        left: 15px;
     }
     .content-texts-arts{
-        position: relative;
-        left: -15px;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
         margin-top: 35px;
     }
-    .desenho1, .desenho2, .desenho3 {
-        display: none;
+    .desenho1, .desenho2, .desenho3{
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px
     }
     .content-texts {
         align-items: center;
@@ -940,18 +1004,17 @@ nav a {
     .paragraph-principal-information {
         font-size: 1.8rem;
         padding-bottom: 15px;
-        text-align: center;
+        text-align: left;
     }
     .paragraph-information {
         font-size: 1rem;
         text-align: justify;
-        position: relative;
-        left: 0px;
     }
     .paragraph_comment{
         width: 350px;
         margin: auto;
     }
+
     .content-text-testimonials{
         display: flex;
         justify-content: center;

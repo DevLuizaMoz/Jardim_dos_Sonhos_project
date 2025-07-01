@@ -26,16 +26,21 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 });
 
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      const target = document.querySelector(href);
+      if (target) {
         target.scrollIntoView({
-            behavior: 'smooth', /* Scroll suave */
-            block: 'start'      /* Alinha ao topo */
+          behavior: 'smooth',
+          block: 'start'
         });
-    });
+      }
+    }
+  });
 });
 
 
@@ -79,4 +84,14 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Muda de slide a cada 5 segundos
     setInterval(nextSlide, 5000);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dateElements = document.querySelectorAll('.date-calendar');
+    
+    dateElements.forEach(dateElement => {
+        dateElement.addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+        });
+    });
 });
