@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assents/imgs-gerais/favicon/flor.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="home_page_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script defer src="app_home_page.js"></script>
+    
     <!--tag defer
     Quando você usa o atributo defer, está informando ao navegador para baixar o script em segundo plano enquanto a página está sendo carregada, mas para não executá-lo até que o documento HTML tenha sido completamente analisado
     -->
@@ -174,36 +177,117 @@
                 </div>
             </section>
 
-            <!--seção de comentarios fazer amanhã-->
+            <!--seção de comentarios fazer amanhã - mudar a foto das pessoas
+            ver os links da ancora do nav
+            -->
             <section class="slider-comment-parents_main" id="testimonials">
-                <div class="content-text-testimonials">
-                    <h1>Testemunho dos pais dos nossos alunos</h1>
-                </div>
-                <div class="content-slider">
-                    <div class="content-slides_testimonials">
-                        <div class="slide-testimonials first">
-                            <p class="paragraph_comment">Precisei voltar cedo a trabalhar e fiz a escolha correta em colocar minha filha nas mãos dos profissionais da Jardim dos Sonhos. Eu não poderia estar mais feliz com o cuidado e atenção que minha filha recebe.É perceptível o carinho e a preocupação com o desenvolvimento dela. </p>
-                            <p class="paragraph_comment_names">Mariana Lopes</p>
+                <div class="container-testimonials" id="testimonials">
+                    <div class="testimonials">
+                        <div class="content-text-testimonials">
+                            <h1>Testemunho dos pais dos nossos alunos</h1>
                         </div>
-                        <div class="slide-testimonials">
-                            <p class="paragraph_comment">Ver meu filho tão envolvido nas atividades desde tão pequeno é gratificante. A escola cria um espaço acolhedor e divertido onde ele está aprendendo enquanto brinca, e isso como pai me deixa tranquilo e orgulhoso.</p>
-                            <p class="paragraph_comment_names">Pedro Almeida</p>
-                        </div>
-                        <div class="slide-testimonials">
-                            <p class="paragraph_comment">No berçário, meu bebê recebe uma atenção que parece quase personalizada! E agora na educação infantil, é incrível ver como ele começa a interagir com os outros e a desenvolver habilidades importantes para o futuro.</p>
-                            <p class="paragraph_comment_names">Juliana Ferreira</p>
-                        </div>
-                        <div class="slide-testimonials">
-                            <p class="paragraph_comment">Essa escola é uma extensão da nossa casa. Saber que meu filho está em um ambiente seguro, onde a equipe é acolhedora e dedicada, faz toda a diferença. Eu e minha esposa ficamos tranquilos em deixar nosso filho e trabalharmos em paz.</p>
-                            <p class="paragraph_comment_names">Carlos Andrade</p>
-                        </div>
-                        <div class="slide-testimonials">
-                            <p class="paragraph_comment">Ver meu pequeno se desenvolver em um ambiente tão cuidadoso e estimulante é algo que como mãe me enche de gratidão. O carinho e a dedicação dos profissionais refletem diretamente na felicidade do meu filho.</p>
-                            <p class="paragraph_comment_names">Fernanda Carvalho</p>
+                        <div class="testimonials-content">
+                            <div class="swiper testimonials-slider js-testimonials-slider">
+                                <div class="swiper-wrapper">
+                                <!--1--> 
+                                <div class="swiper-slide testimonials-item">
+                                        <div class="info-testimonials">
+                                            <img src="assents/imgs/pessoas/pexels-glauber-torquato-1161877-2219273.jpg" alt="">
+                                            <div class="text-box">
+                                                <h3 class="name-testimonials">Mariana Lopes</h3>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p>Precisei voltar cedo a trabalhar e fiz a escolha correta em colocar minha filha nas mãos dos profissionais da<span class="pontos">...</span><span class="mais"> Jardim dos Sonhos. Eu não poderia estar mais feliz com o cuidado e atenção que minha filha recebe.É perceptível o carinho e a preocupação com o desenvolvimento dela.</p>
+                                    <a onclick="vermais(this)" class="btnVerMais">Ver mais</a>
+                                    </div>
+                                    <!--2-->
+                                    <div class="swiper-slide testimonials-item">
+                                        <div class="info-testimonials">
+                                            <img src="assents/imgs/pessoas/pexels-lovetosmile-3002185.jpg" alt="">
+                                            <div class="text-box">
+                                                <h3 class="name-testimonials">Pedro Almeida</h3>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p>Ver meu filho tão envolvido nas atividades desde tão pequeno é gratificante. A escola cria um espaço acolhedor e<span class="pontos">...</span><span class="mais"> divertido onde ele está aprendendo enquanto brinca, e isso como pai me deixa tranquilo e orgulhoso.</p>
+                                    <a onclick="vermais(this)" class="btnVerMais">Ver mais</a>
+                                    </div>
+                                    <!--3-->
+                                    <div class="swiper-slide testimonials-item">
+                                        <div class="info-testimonials">
+                                            <img src="assents/imgs/pessoas/pexels-mwabonje-1820919.jpg" alt="">
+                                            <div class="text-box">
+                                                <h3 class="name-testimonials">Juliana Ferreira</h3>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p>No berçário, meu bebê recebe uma atenção que parece quase personalizada! E agora na educação infantil<span class="pontos">...</span><span class="mais">, é incrível ver como ele começa a interagir com os outros e a desenvolver habilidades importantes para o futuro.</p>
+                                    <a onclick="vermais(this)" class="btnVerMais">Ver mais</a>
+                                    </div>
+                                    <!--4-->
+                                    <div class="swiper-slide testimonials-item">
+                                        <div class="info-testimonials">
+                                            <img src="assents/imgs/pessoas/pexels-ravi-k-301762-14134502.jpg" alt="">
+                                            <div class="text-box">
+                                                <h3 class="name-testimonials">Carlos Andrade</h3>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p>Essa escola é uma extensão da nossa casa. Saber que meu filho está em um ambiente seguro<span class="pontos">...</span><span class="mais">, onde a equipe é acolhedora e dedicada, faz toda a diferença. Eu e minha esposa ficamos tranquilos em deixar nosso filho e trabalharmos em paz.</p>
+                                    <a onclick="vermais(this)" class="btnVerMais">Ver mais</a>
+                                    </div>
+                                    <!--5-->
+                                    <div class="swiper-slide testimonials-item">
+                                        <div class="info-testimonials">
+                                            <img src="assents/imgs/pessoas/pexels-spencphoto-27894407.jpg" alt="">
+                                            <div class="text-box">
+                                                <h3 class="name-testimonials">Fernanda Carvalho</h3>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p>Ver meu pequeno se desenvolver em um ambiente tão cuidadoso e estimulante é <span class="pontos">...</span><span class="mais"> algo que como mãe me enche de gratidão. O carinho e a dedicação dos profissionais refletem diretamente na felicidade do meu filho.</p>
+                                    <a onclick="vermais(this)" class="btnVerMais">Ver mais</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination js-testimonials-pagination"></div>
                         </div>
                     </div>
                 </div>
             </section>
+
+                
 
             <section class="contact-area_main" id="contact">
                 <div class="content-text">
@@ -260,5 +344,43 @@
 
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.js-testimonials-slider', {
+            grabCursor: true,
+            spaceBetween: 30,
+            pagination: {
+                el: '.js-testimonials-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                610: { 
+                slidesPerView: 1
+                },
+                780: {
+                slidesPerView: 2
+                }
+            },
+            on: {
+                init: function() {
+                updateBulletColors(this.activeIndex);
+                },
+                slideChange: function() {
+                updateBulletColors(this.activeIndex);
+                }
+            }
+            });
+
+            function updateBulletColors(activeIndex) {
+            const colors = ['#C737A1', '#6976E0', '#2CA9A1', '#FFD55A', '#E67D53'];
+            const bullets = document.querySelectorAll('.testimonials .swiper-pagination-bullet');
+            
+            bullets.forEach((bullet, index) => {
+                bullet.style.backgroundColor = index === activeIndex ? colors[index % colors.length] : '#D3D3D3';
+            });
+            }
+    </script>
 </body>
 </html>
