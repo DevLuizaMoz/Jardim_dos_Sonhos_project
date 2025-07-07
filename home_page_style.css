@@ -1068,8 +1068,11 @@ nav a {
         margin-top: 35px;
         margin-bottom: 15px;
     }
-    .testimonials-item {
+    .testimonials {
         width: 390px;
+    }
+    .info-testimonials{
+        width: 500px;
         margin: 10px;
     }
 }
