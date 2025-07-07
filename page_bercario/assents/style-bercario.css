@@ -177,7 +177,8 @@ nav a {
     font-size: 2.5rem;
     padding: 35px;
     white-space: normal;
-    margin: auto;
+    margin: 10px;
+    letter-spacing: 2px;
     text-align: left;
     color: #386d17;
 }
