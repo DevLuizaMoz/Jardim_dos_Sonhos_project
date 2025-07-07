@@ -675,10 +675,11 @@ nav a {
     background: #5d903e; 
     border-radius: 30px;
 }
-.content-contact form button{
+.content-contact form a{
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
+    text-align: center;
     background-color: transparent;
     border: 2px solid #5cbf1ebe;
     color: #333;
@@ -687,11 +688,11 @@ nav a {
     margin-bottom: 20px;
     border-radius: 5px;
 }
-.content-contact form button:hover{
+.content-contact form a:hover{
     background-color: #5cbf1ebe;
     border-radius: 25px;
 }
-.content-contact form button:focus{
+.content-contact form a:focus{
     transform: scale(1.1);
 }
 
@@ -945,6 +946,7 @@ nav a {
     .content-map-contact{
         display: flex;
         flex-direction: column;
+        margin: 15px
     }
     .content-mapBox{
         width: 400px;
